@@ -1,0 +1,15 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "simple app to start recording values",
+  "main": "myapp.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "myapp"
+  },
+  "author": "Danny Dykes",
+  "license": "ISC"
+}
