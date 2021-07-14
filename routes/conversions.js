@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 
   console.log(" here is what we heard: value " + cv + " oeg " + oeg + " cc " + cc + " gcl " + gcl + " fwb " + fwb);
-  console.dir("testing");
+  console.dir(req);
 });
 
 module.exports = router;
