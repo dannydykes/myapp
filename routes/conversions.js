@@ -10,10 +10,11 @@ router.get('/', function(req, res, next) {
   var oeg = req.get('oeg');
   var gcl = req.get('gcl');
   var fwb = req.get('fwb');
+  var url = req.get('url');
 
 
   console.log(" here is what we heard: value " + cv + " oeg " + oeg + " cc " + cc + " gcl " + gcl + " fwb " + fwb);
-  console.log("IP = " + req.ip);
+  console.log("URL = " + url);
 });
 
 module.exports = router;
