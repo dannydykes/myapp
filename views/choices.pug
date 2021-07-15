@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  form(id='event_name', action='/', method='get')
+    p
+      | Event Type: 
+      input(type='text', name='event', value=event, placeholder='event_name')
+    input(type='submit', value='Submit')
+  p

@@ -38,6 +38,7 @@ router.get('/', function(req, res, next) {
       page_location: page_location,
       event: event
     });
+    db.close();
   });
 });
 

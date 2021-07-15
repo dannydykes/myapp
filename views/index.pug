@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  include choices.pug
+
+  p this is the page_event!! #{event}
+
+  table
+    tr 
+      th Date 
+      th gclid 
+      th Value 
+      th Page_Location 
+      th Event
+
+    each data, i in results
+      tr
+        td !{data.date}
+        td !{data.gcl}
+        td !{data.cv}
+        td 
+          a(href='!{data.page_location}') !{data.page_location}
+        td !{data.event}
