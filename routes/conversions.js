@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
   var fwbo = req.get('fwbo') !== undefined ? req.get('fwbo') : 'Not Set';
   var fwb = req.get('fwb') !== undefined ? req.get('fwb') : 'Not Set';
   var page_location = req.get('page_location') !== undefined ? req.get('page_location') : 'Not Set';
+  var event = req.get('event') !== undefined ? req.get('event') : 'Not Set';
 
 
   // Connect to the database
@@ -34,7 +35,8 @@ router.get('/', function(req, res, next) {
       gcl: gcl,
       fwbo: fwbo,
       fwb: fwb,
-      page_location: page_location
+      page_location: page_location,
+      event: event
     });
   });
 });
