@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 const express = require('express');
-var router = express.Router();
+const router = express.Router();
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
@@ -11,9 +11,9 @@ router.get('/', async function (req, res, next) {
 
   try {
     await client.connect();
-
     var dbo = client.db();
     var collection = dbo.collection('bd_client');
+  
     var result = await collection.insertOne({ 
       date: new Date(),
       cv: req.get('cv') !== undefined ? req.get('cv') : 0.00,
@@ -25,7 +25,6 @@ router.get('/', async function (req, res, next) {
       page_location: req.get('page_location') !== undefined ? req.get('page_location') : 'Not Set',
       event: req.get('event') !== undefined ? req.get('event') : 'Not Set'
     });
-    console.log(`${result.insertedCount} documents were inserted with the _id: ${result.insertedId}`);
   } finally {
     await client.close();
   }
