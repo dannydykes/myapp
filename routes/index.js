@@ -1,6 +1,6 @@
-const { MongoClient } = require('mongodb');
-const express = require('express');
-const router = express.Router();
+import { MongoClient } from 'mongodb';
+import { Router } from 'express';
+const router = Router();
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
@@ -24,7 +24,6 @@ router.get('/', async function (req, res, next) {
     await new Promise(function (resolve, reject) {
       findResults.toArray(function(err, result) {
         if (err) reject(err);
-        console.log("rendering");
         resolve(res.render('index', { event : req.query.event ? req.query.event : '', results : result }));
       });
     });
@@ -35,4 +34,4 @@ router.get('/', async function (req, res, next) {
   }
 });
 
-module.exports = router;
+export default router;
