@@ -24,7 +24,7 @@ router.get('/', async function (req, res, next) {
     await new Promise(function (resolve, reject) {
       findResults.toArray(function(err, result) {
         if (err) reject(err);
-        resolve(res.send(result));
+        resolve(res.send(JSON.stringify(result)));
       });
     });
 
