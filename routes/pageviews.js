@@ -16,7 +16,7 @@ router.get('/', async function (req, res, next) {
     var findResults;
     if (req.query.event) {
       // we have a id so use it in the filter
-      findResults = collection.find({ 'event': req.query.event });
+      findResults = collection.find({ '_id': req.query._id });
     } else {
       findResults = collection.find({});
     }
