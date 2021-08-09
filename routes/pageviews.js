@@ -14,9 +14,10 @@ router.get('/', async function (req, res, next) {
     var collection = client.db().collection('bd_client');
 
     var findResults;
-    if (req.query._id) {
+    if (req.query.fwb) {
       // we have a id so use it in the filter
-      findResults = collection.find({ '_id': req.query._id });
+      console.log("req.fwb " + req.query.fwb);
+      findResults = collection.find({ 'fwb': req.query.fwb });
     } else {
       findResults = collection.find({});
     }
