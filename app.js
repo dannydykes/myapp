@@ -4,6 +4,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+// for login
+const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
+const cyrpto = require('crypto');
+const connection = require('./config/database');
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const conversionsRouter = require('./routes/conversions');
